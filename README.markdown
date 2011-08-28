@@ -25,6 +25,11 @@ So, you don't have git on your computer? Install it :P
 
 ###Installing
 
+####For ubuntu
+Make a git checkout in ubuntu branch
+    $ git checkout ubuntu
+    
+
 After download the packages with or without git, 
 all you need to do is create a ``.vimrc`` on your ``$HOME``:
 
