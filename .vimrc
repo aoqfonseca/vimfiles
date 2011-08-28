@@ -1,5 +1,7 @@
 set term=builtin_ansi
 
+colorscheme jellybeans
+
 "Setting VIMHOME
 let $VIMHOME = $HOME."/.vim"
 
@@ -75,11 +77,6 @@ map <C-S-Down> <c-w>+
 "End mappings
 
 if has("gui_running")
-    "Colorscheme
-    colorscheme jellybeans
-
-    "guifont
-    set guifont=Inconsolata:h16
-
-    set guioptions=egmt
+    set guifont=Inconsolata\ 16
 endif
+
