@@ -6,6 +6,9 @@ let $VIMHOME = $HOME."/.vim"
 "Setting PYTHONPATH
 let $PYTHONPATH .= ":".$VIMHOME."/python"
 
+"Setting PATH
+let $PATH .= ":".$VIMHOME."/python"
+
 "Loading bundle plugins
 call pathogen#runtime_append_all_bundles()
 
@@ -71,6 +74,7 @@ map <C-S-Left> <c-w><
 map <C-S-Right> <c-w>>
 map <C-S-Up> <c-w>-
 map <C-S-Down> <c-w>+
+
 "============
 "End mappings
 
