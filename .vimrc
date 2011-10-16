@@ -77,6 +77,7 @@ map <C-S-Down> <c-w>+
 "End mappings
 
 if has("gui_running")
-    set guifont=Inconsolata\ 16
+    set guifont=Inconsolata\ 18
+    set guioptions=aiA
 endif
 
