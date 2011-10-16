@@ -8,6 +8,7 @@ let $PYTHONPATH .= ":".$VIMHOME."/python"
 
 "Setting PATH
 let $PATH .= ":".$VIMHOME."/python"
+let g:LustyJugglerSuppressRubyWarning = 1
 
 "Loading bundle plugins
 call pathogen#runtime_append_all_bundles()
@@ -83,7 +84,7 @@ if has("gui_running")
     colorscheme jellybeans
 
     "guifont
-     set guifont=Monaco:h14
+     set guifont=Monaco:h16
 
     set guioptions=egmt
     set fuoptions=maxvert,maxhorz
