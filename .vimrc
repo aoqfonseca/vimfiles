@@ -1,5 +1,3 @@
-set term=builtin_ansi
-
 "Setting VIMHOME
 let $VIMHOME = $HOME."/.vim"
 
@@ -20,6 +18,9 @@ filetype plugin on
 "Hidden mode
 set hidden
 set number
+
+"Backspace
+set backspace=2
 
 "Bad whitespaces
 autocmd BufEnter * highlight BadWhitespace ctermbg=red guibg=red
