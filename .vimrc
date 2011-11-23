@@ -56,7 +56,7 @@ nmap <C-S-Tab> gT
 function TrimWhiteSpace()
     %s/\s*$//
     ''
-:endfunction
+endfunction
 
 function ToggleFold()
    if foldlevel('.') == 0
