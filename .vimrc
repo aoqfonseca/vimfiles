@@ -135,10 +135,10 @@ map <C-S-Down> <c-w>+
 
 if has("gui_running")
     "Colorscheme
-    colorscheme solarized
+    colorscheme jellybeans
 
     "guifont
-     set guifont=Monaco:h16
+     set guifont=Monaco:h14
 
     set guioptions=egmt
     set fuoptions=maxvert,maxhorz
