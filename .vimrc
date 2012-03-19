@@ -58,6 +58,16 @@ function TrimWhiteSpace()
     ''
 endfunction
 
+function InsertTabWrapper()
+      let col = col('.') - 1
+      if !col || getline('.')[col - 1] !~ '\k'
+          return "\<tab>"
+      else
+          return "\<c-p>"
+      endif
+endfunction
+
+
 function ToggleFold()
    if foldlevel('.') == 0
 " No fold exists at the current line,
@@ -106,6 +116,8 @@ function ToggleFold()
       normal zd
    endif
 endfunction
+
+inoremap <C-tab> <c-r>=InsertTabWrapper()<cr>
 
 "Mapping para code fold
 vmap <space> zf
