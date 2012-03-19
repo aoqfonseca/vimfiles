@@ -138,8 +138,10 @@ if has("gui_running")
     colorscheme jellybeans
 
     "guifont
-     set guifont=Monaco:h14
+    " set guifont=Monaco:h14
+    set guifont=Inconsolata:h18
 
     set guioptions=egmt
+    set guioptions-=m
     set fuoptions=maxvert,maxhorz
 endif
