@@ -55,3 +55,6 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = git://github.com/lunaru/vim-less.git
