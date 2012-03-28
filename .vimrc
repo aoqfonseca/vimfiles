@@ -157,3 +157,6 @@ if has("gui_running")
     set guioptions-=m
     set fuoptions=maxvert,maxhorz
 endif
+
+nmap <silent> <Leader>t :CtrlP<CR>
+
