@@ -39,6 +39,24 @@ set smartindent
 set smarttab
 set wildmenu
 set wildmode=list:longest
+set scrolloff=3
+set showmode
+set showcmd
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set nobackup
+set noswapfile
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
+
 
 "Increase HTML indent
 let g:html_indent_inctags="html,head,body,tbody"
