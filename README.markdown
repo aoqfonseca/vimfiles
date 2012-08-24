@@ -1,4 +1,4 @@
-#Francisco Souza's vim files.
+#My vim files.
 
 ##Getting started
 
