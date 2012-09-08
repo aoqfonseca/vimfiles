@@ -1,3 +1,22 @@
+set nocompatible               " be iMproved
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+"  required!
+Bundle 'gmarik/vundle'
+Bundle 'L9'
+Bundle 'tpope/vim-fugitive'
+Bundle 'FuzzyFinder'
+Bundle 'nathanaelkane/vim-command-w'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-endwise'
+Bundle 'pangloss/vim-javascript'
+Bundle 'mrtazz/molokai.vim'
+Bundle 'Lokaltog/vim-powerline'
+
 "Setting VIMHOME
 let $VIMHOME = $HOME."/.vim"
 
