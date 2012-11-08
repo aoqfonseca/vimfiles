@@ -58,9 +58,6 @@
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = git://github.com/lunaru/vim-less.git
-[submodule "bundle/numbers.vim"]
-	path = bundle/numbers.vim
-	url = https://github.com/myusuf3/numbers.vim.git
 [submodule "bundle/vundle"]
 	path = bundle/vundle
 	url = https://github.com/gmarik/vundle.git
