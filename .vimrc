@@ -188,7 +188,9 @@ if has("gui_running")
 
     "guifont
     "set guifont=Monaco:h14
-    set guifont=Inconsolata:h16
+    "set guifont=Inconsolata:h16
+    set guifont=SourceCodePro-Regular:h13
+    set antialias
 
     set guioptions=egmt
     set guioptions-=m
