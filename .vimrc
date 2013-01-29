@@ -184,7 +184,7 @@ map <C-S-Down> <c-w>+
 
 if has("gui_running")
     "Colorscheme
-    colorscheme jellybeans
+    colorscheme solarized
 
     "guifont
     "set guifont=Monaco:h14
