@@ -16,6 +16,10 @@ Bundle 'tpope/vim-endwise'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mrtazz/molokai.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-scala'
+Bundle 'go.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'spf13/vim-colors'
 
 "Setting VIMHOME
 let $VIMHOME = $HOME."/.vim"
@@ -68,8 +72,8 @@ set backspace=indent,eol,start
 set laststatus=2
 set nobackup
 set noswapfile
-set history=1000         " remember more commands and search history
-set undolevels=1000      " use many muchos levels of undo
+set history=500         " remember more commands and search history
+set undolevels=500      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
 set visualbell           " don't beep
@@ -108,11 +112,6 @@ function InsertTabWrapper()
 endfunction
 
 inoremap <C-tab> <c-r>=InsertTabWrapper()<cr>
-
-"Mapping para code fold
-vmap <space> zf
-nmap <space> :call ToggleFold()<CR>
-
 map <Leader>o :call TrimWhiteSpace()<CR>
 
 "Moving lines
@@ -137,12 +136,9 @@ map <C-S-Down> <c-w>+
 
 if has("gui_running")
     "Colorscheme
-    colorscheme jellybean
+    colorscheme molokai_mac
 
-    "guifont
-    "set guifont=Monaco:h14
-    "set guifont=Inconsolata:h16
-    set guifont=SourceCodePro-Regular:h13
+    set guifont=SourceCodePro-Semibold:h12
     set antialias
 
     set guioptions=egmt
