@@ -175,9 +175,9 @@ if has("gui_running")
         set guifont=Inconsolata\ 16
     endif
 
-    set guioptions=aiA
-    set guioptions=egmt
-    set guioptions-=m
+    " set guioptions=aiA
+    " set guioptions=egmt
+    " set guioptions-=m
 endif
 
 nmap <silent> <Leader>t :CtrlP<CR>
