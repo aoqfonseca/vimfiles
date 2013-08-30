@@ -1,7 +1,34 @@
+<<<<<<< HEAD
 set term=builtin_ansi
 
 colorscheme jellybeans
 
+=======
+set nocompatible               " be iMproved
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+"  required!
+Bundle 'gmarik/vundle'
+Bundle 'L9'
+Bundle 'tpope/vim-fugitive'
+Bundle 'FuzzyFinder'
+Bundle 'nathanaelkane/vim-command-w'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-endwise'
+Bundle 'pangloss/vim-javascript'
+Bundle 'mrtazz/molokai.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-scala'
+Bundle 'go.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'spf13/vim-colors'
+Bundle 'fugitive.vim'
+Bundle 'klen/python-mode'
+>>>>>>> 89329f80917284e3804ef253dc397a634b6a2e17
 "Setting VIMHOME
 let $VIMHOME = $HOME."/.vim"
 
@@ -53,13 +80,57 @@ set backspace=indent,eol,start
 set laststatus=2
 set nobackup
 set noswapfile
-set history=1000         " remember more commands and search history
-set undolevels=1000      " use many muchos levels of undo
+set history=500         " remember more commands and search history
+set undolevels=500      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+set laststatus=2
+
+
+" Python-mode
+" Activate rope
+" Keys:
+" K             Show python docs
+" <Ctrl-Space>  Rope autocomplete
+" <Ctrl-c>g     Rope goto definition
+" <Ctrl-c>d     Rope show documentation
+" <Ctrl-c>f     Rope find occurrences
+" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
+" [[            Jump on previous class or function (normal, visual, operator modes)
+" ]]            Jump on next class or function (normal, visual, operator modes)
+" [M            Jump on previous class or method (normal, visual, operator modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 1
+
+" Documentation
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 1
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
 
 
 "Increase HTML indent
@@ -89,62 +160,7 @@ function InsertTabWrapper()
       endif
 endfunction
 
-
-function ToggleFold()
-   if foldlevel('.') == 0
-" No fold exists at the current line,
-" so create a fold based on indentation
-
-      let l_min = line('.') " the current line number
-      let l_max = line('$') " the last line number
-      let i_min = indent('.') " the indentation of the current line
-      let l = l_min + 1
-
-" Search downward for the last line whose indentation > i_min
-      while l <= l_max
-" if this line is not blank ...
-         if strlen(getline(l)) > 0 && getline(l) !~ '^\s*$'
-            if indent(l) <= i_min
-
-" we've gone too far
-               let l = l - 1 " backtrack one line
-               break
-            endif
-         endif
-         let l = l + 1
-      endwhile
-
-" Clamp l to the last line
-      if l > l_max
-         let l = l_max
-      endif
-
-" Backtrack to the last non-blank line
-      while l > l_min
-         if strlen(getline(l)) > 0 && getline(l) !~ '^\s*$'
-            break
-         endif
-         let l = l - 1
-      endwhile
-
-"execute "normal i" . l_min . "," . l . " fold" " print debug info
-
-      if l > l_min
-" Create the fold from l_min to l
-         execute l_min . "," . l . " fold"
-      endif
-   else
-" Delete the fold on the current line
-      normal zd
-   endif
-endfunction
-
 inoremap <C-tab> <c-r>=InsertTabWrapper()<cr>
-
-"Mapping para code fold
-vmap <space> zf
-nmap <space> :call ToggleFold()<CR>
-
 map <Leader>o :call TrimWhiteSpace()<CR>
 
 "Moving lines
@@ -167,12 +183,16 @@ map <C-S-Down> <c-w>+
 "============
 "End mappings
 
+
 if has("gui_running")
-    colorscheme jellybeans
-    set guifont=Inconsolata:h16
+
+    "Colorscheme
+    colorscheme molokai_mac
+    set guifont=SourceCodePro-Semibold:h13
+    set antialias
 
     if has("gui_gnome")
-        set guifont=Inconsolata\ 16
+        set guifont=Inconsolata\ 13
     endif
 
     " set guioptions=aiA
