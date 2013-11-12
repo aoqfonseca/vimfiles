@@ -10,19 +10,25 @@ Bundle 'gmarik/vundle'
 Bundle 'L9'
 Bundle 'tpope/vim-fugitive'
 Bundle 'FuzzyFinder'
-Bundle 'nathanaelkane/vim-command-w'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-endwise'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mrtazz/molokai.vim'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-scala'
 Bundle 'go.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'spf13/vim-colors'
 Bundle 'fugitive.vim'
 Bundle 'klen/python-mode'
+Bundle 'The-NERD-tree'
+Bundle 'The-NERD-Commenter'
+Bundle 'wting/rust.vim'
+Bundle 'wombat256.vim'
+Bundle 'surround.vim'
+Bundle 'vim-jsbeautify'
+
 "Setting VIMHOME
+"
 let $VIMHOME = $HOME."/.vim"
 
 "Setting PYTHONPATH
@@ -80,13 +86,11 @@ set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
 
 
 " Python-mode
 " Activate rope
-" Keys:
 " K             Show python docs
 " <Ctrl-Space>  Rope autocomplete
 " <Ctrl-c>g     Rope goto definition
@@ -97,7 +101,6 @@ set laststatus=2
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1
 
 " Documentation
 let g:pymode_doc = 1
@@ -106,6 +109,9 @@ let g:pymode_doc_key = 'K'
 "Linting
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_ignore = "E501,E126,E127,W1401,C0110,C0301,R0201"
+let g:pymode_lint_select = ""
+
 " Auto check on save
 let g:pymode_lint_write = 1
 
@@ -117,14 +123,11 @@ let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_key = '<leader>b'
 
 " syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
+let g:pymode_indent=0
+let g:pymode_syntax=0
 
 " Don't autofold code
 let g:pymode_folding = 0
-
 
 "Increase HTML indent
 let g:html_indent_inctags="html,head,body,tbody"
@@ -176,18 +179,25 @@ map <C-S-Down> <c-w>+
 "============
 "End mappings
 
+set t_Co=256
+colorscheme wombat256mod
+set guifont=SourceCodePro-Regular:h12
 
 if has("gui_running")
     "Colorscheme
-    colorscheme molokai_mac
+    colorscheme wombat256mod
 
-    set guifont=SourceCodePro-Semibold:h13
+    set guifont=SourceCodePro-Regular:h12
     set antialias
 
     set guioptions=egmt
     set guioptions-=m
     set fuoptions=maxvert,maxhorz
+
+    set go-=T
+    set bg=dark
+    set guioptions=T
+    set background=dark
 endif
 
 nmap <silent> <Leader>t :CtrlP<CR>
-
