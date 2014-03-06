@@ -61,3 +61,6 @@
 [submodule "bundle/vundle"]
 	path = bundle/vundle
 	url = https://github.com/gmarik/vundle.git
+[submodule ".vim/bundle/smyck/colors"]
+	path = .vim/bundle/smyck/colors
+	url = https://github.com/hukl/Smyck-Color-Scheme.git
