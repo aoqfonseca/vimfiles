@@ -1,0 +1,97 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+
+"Config do vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+" Colocar a lista de plugins nesse espaco
+Plugin 'gmarik/Vundle.vim'
+Plugin 'fisadev/fisa-vim-colorscheme'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'klen/python-mode'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'go.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'JellyX'
+Plugin 'molokai'
+Plugin 'jellybeans.vim'
+Plugin 'candy.vim'
+Plugin 'vividchalk.vim'
+Plugin 'Twilight-for-python'
+Plugin 'twilight256.vim'
+Plugin 'twilight'
+Plugin 'Solarized'
+Plugin 'vim-scala'
+Plugin 'spf13/vim-colors'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Removes trailing spaces
+function TrimWhiteSpace()
+    %s/\s*$//
+    ''
+endfunction
+
+" Mapeando o retirar espaco para /o
+map <Leader>o :call TrimWhiteSpace()<CR>
+
+
+" tab length exceptions on some file types
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" syntax highlight on
+syntax on
+
+
+" toggle nerdtree display
+map <F3> :NERDTreeToggle<CR>
+
+" open nerdtree with the current file selected
+nmap ,t :NERDTreeFind<CR>
+" don;t show these file types
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+let g:pymode_folding = 0
+
+" tabs and spaces handling
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set nu
+set ls=2
+
+" when scrolling, keep cursor 3 lines away from screen border
+set scrolloff=3
+
+" autocompletion of files and commands behaves like shell
+" (complete only the common part, list the options that match)
+set wildmode=list:longest
+set t_Co=256
+colorscheme solarized
+
+if has("gui_running")
+
+    set antialias
+
+    set guioptions=egmt
+    set guioptions-=m
+    set fuoptions=maxvert,maxhorz
+
+    set go-=T
+    set bg=dark
+    set guioptions=T
+    set background=dark
+endif
